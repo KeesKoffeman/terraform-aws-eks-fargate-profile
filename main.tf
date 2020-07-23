@@ -56,7 +56,7 @@ resource "aws_eks_fargate_profile" "default" {
   dynamic "selector" {
     for_each = var.kubernetes_namespaces
     content {
-      namespace = kubernetes_namespace
+      namespace = setting
     }
   }
 }
