@@ -49,13 +49,13 @@ variable "subnet_ids" {
   type        = list(string)
 }
 
-variable "kubernetes_namespace" {
-  type        = string
-  description = "Kubernetes namespace for selection"
+variable "kubernetes_namespaces" {
+  type        = list(string)
+  description = "Kubernetes namespaces for selection"
 }
 
 variable "kubernetes_labels" {
-  type        = map(string)
+  type        = list(map(string))
   description = "Key-value mapping of Kubernetes labels for selection"
   default     = {}
 }
