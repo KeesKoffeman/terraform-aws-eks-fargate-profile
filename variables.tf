@@ -57,5 +57,4 @@ variable "kubernetes_namespaces" {
 variable "kubernetes_labels" {
   type        = list(map(string))
   description = "Key-value mapping of Kubernetes labels for selection"
-  default     = {}
 }
