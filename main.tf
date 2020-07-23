@@ -54,7 +54,8 @@ resource "aws_eks_fargate_profile" "default" {
   tags                   = module.label.tags
 
   selector {
-    namespace = var.kubernetes_namespace
-    labels    = var.kubernetes_labels
+    count     = length(var.kubernetes_namespaces)
+    namespace = var.kubernetes_namespaces[count.index]
+    labels    = var.kubernetes_labels[count.index]
   }
 }
